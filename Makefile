@@ -26,8 +26,6 @@ LL_FILES += $(patsubst %.c,%-O2.ll, $(C_FILES))
 LL_FILES += $(patsubst %.c,%-O3.ll, $(C_FILES))
 
 build: $(LL_FILES)
-	@echo "$(C_FILES)"
-	@echo "$(LL_FILES)"
 
 clean:
 	rm -f $(LL_FILES)
