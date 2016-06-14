@@ -18,12 +18,14 @@ $(eval $(call _clang_emit_llvm,O0))
 $(eval $(call _clang_emit_llvm,O1))
 $(eval $(call _clang_emit_llvm,O2))
 $(eval $(call _clang_emit_llvm,O3))
+$(eval $(call _clang_emit_llvm,Os))
 
 # expand each .c files to a targets for each optimization level
 LL_FILES += $(patsubst %.c,%-O0.ll, $(C_FILES))
 LL_FILES += $(patsubst %.c,%-O1.ll, $(C_FILES))
 LL_FILES += $(patsubst %.c,%-O2.ll, $(C_FILES))
 LL_FILES += $(patsubst %.c,%-O3.ll, $(C_FILES))
+LL_FILES += $(patsubst %.c,%-Os.ll, $(C_FILES))
 
 build: $(LL_FILES)
 
