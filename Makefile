@@ -24,7 +24,7 @@ endef
 
 # Generate build rules for each optimization levels
 $(foreach level,$(OPTIMIZATION_LEVELS), \
-	$(eval $(call _clang_emit_llvm,$(level),c,clang)))
+	$(eval $(call _clang_emit_llvm,$(level),c,clang -std=c11)))
 $(foreach level,$(OPTIMIZATION_LEVELS), \
 	$(eval $(call _clang_emit_llvm,$(level),cpp,clang++ -std=c++11)))
 
