@@ -2,7 +2,7 @@
 
 ## Makefile to generate LLVM Internal Representation (IR) listings
 
-Some Makefile woodoo to generate LLVM IR from `'*.c'` files with for each optimization level: -O0, -Os, -O1, and so on.
+Makefile woodoo to generate LLVM IR `'*.ll'` listings from `'*.c, *.cpp'` files with for each optimization level: -O0, -O1..-O3, -Os
 
 For any `'*.c'` file in directory it will generate something like this:
 
@@ -16,8 +16,15 @@ example.c -> example-O2.ll
 
 ## There are some examples to understand how optimizer works
 
-Examples were made for blog post: (URL will be here)
+Examples were made for the blog post: "TODO: *URL*"
 
 
-## Check out (https://github.com/cachelot/cachelot)[cachelot] - super fast LRU cache library and Memcached'ish server with only 5-7% memory overhead.
+Check out **[cachelot](https://github.com/cachelot/cachelot)**
+
+Super fast LRU cache library and Memcached'ish server with only 5-7% memory overhead and 99% single core utlilization.
+
+### Contacts
+ * Twitter: [@cachelot_io](https://twitter.com/cachelot_io)
+ * Facebook: [cachelot.io](https://facebook.com/cachelot.io)
+
 
