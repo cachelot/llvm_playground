@@ -1,3 +1,9 @@
+#
+#  (C) Copyright 2015 Iurii Krasnoshchok
+#
+#  Distributed under the terms of Simplified BSD License
+#  see LICENSE file
+
 # Makefile that generates LLVM IR listings with a several optimization levels
 # How to use:
 # - Put any valid C/C++ file with extension .c or .cpp correspondingly
