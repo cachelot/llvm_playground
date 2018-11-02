@@ -25,6 +25,8 @@ OPTIMIZATION_LEVELS := O0 O1 O2 O3 Os
 define _clang_emit_llvm
 %-$(1).ll: %.$(2)
 	$(3) -S -emit-llvm -$(1) $$< -o $$@
+%-$(1).asm: %.$(2)
+	$(3) -S -$(1) $$< -o $$@
 
 endef
 
@@ -38,7 +40,9 @@ $(foreach level,$(OPTIMIZATION_LEVELS), \
 C_FILES := $(wildcard *.c)
 CPP_FILES := $(wildcard *.cpp)
 TARGET_LLVM += $(foreach level,$(OPTIMIZATION_LEVELS),$(patsubst %.c,%-$(level).ll, $(C_FILES)))
+TARGET_LLVM += $(foreach level,$(OPTIMIZATION_LEVELS),$(patsubst %.c,%-$(level).asm, $(C_FILES)))
 TARGET_LLVM += $(foreach level,$(OPTIMIZATION_LEVELS),$(patsubst %.cpp,%-$(level).ll, $(CPP_FILES)))
+TARGET_LLVM += $(foreach level,$(OPTIMIZATION_LEVELS),$(patsubst %.cpp,%-$(level).asm, $(CPP_FILES)))
 
 build: $(TARGET_LLVM)
 
